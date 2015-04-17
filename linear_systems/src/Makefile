@@ -79,7 +79,7 @@ POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
 host_triplet = x86_64-unknown-linux-gnu
 target_triplet = x86_64-unknown-linux-gnu
-bin_PROGRAMS = linear_systems$(EXEEXT)
+bin_PROGRAMS = $(top_builddir)/bin/linear_systems$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/depcomp
@@ -92,9 +92,12 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_linear_systems_OBJECTS = polynomial_solving.$(OBJEXT)
-linear_systems_OBJECTS = $(am_linear_systems_OBJECTS)
-linear_systems_LDADD = $(LDADD)
+am___top_builddir__bin_linear_systems_OBJECTS =  \
+	linear_system.$(OBJEXT) matrix.$(OBJEXT) main.$(OBJEXT)
+__top_builddir__bin_linear_systems_OBJECTS =  \
+	$(am___top_builddir__bin_linear_systems_OBJECTS)
+__top_builddir__bin_linear_systems_LDADD = $(LDADD)
+am__dirstamp = $(am__leading_dot)dirstamp
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -124,8 +127,8 @@ AM_V_CXXLD = $(am__v_CXXLD_$(V))
 am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(linear_systems_SOURCES)
-DIST_SOURCES = $(linear_systems_SOURCES)
+SOURCES = $(__top_builddir__bin_linear_systems_SOURCES)
+DIST_SOURCES = $(__top_builddir__bin_linear_systems_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -151,12 +154,12 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/cabox/workspace/linear_systems/missing aclocal-1.14
+ACLOCAL = ${SHELL} /home/bvuong/git/linear_systems/linear_systems/missing aclocal-1.14
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} /home/cabox/workspace/linear_systems/missing autoconf
-AUTOHEADER = ${SHELL} /home/cabox/workspace/linear_systems/missing autoheader
-AUTOMAKE = ${SHELL} /home/cabox/workspace/linear_systems/missing automake-1.14
+AUTOCONF = ${SHELL} /home/bvuong/git/linear_systems/linear_systems/missing autoconf
+AUTOHEADER = ${SHELL} /home/bvuong/git/linear_systems/linear_systems/missing autoheader
+AUTOMAKE = ${SHELL} /home/bvuong/git/linear_systems/linear_systems/missing automake-1.14
 AWK = gawk
 CPPFLAGS = 
 CXX = g++
@@ -178,7 +181,7 @@ LDFLAGS =
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/cabox/workspace/linear_systems/missing makeinfo
+MAKEINFO = ${SHELL} /home/bvuong/git/linear_systems/linear_systems/missing makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
 PACKAGE = linear_systems
@@ -193,10 +196,10 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = 
 VERSION = 1.0
-abs_builddir = /home/cabox/workspace/linear_systems/src
-abs_srcdir = /home/cabox/workspace/linear_systems/src
-abs_top_builddir = /home/cabox/workspace/linear_systems
-abs_top_srcdir = /home/cabox/workspace/linear_systems
+abs_builddir = /home/bvuong/git/linear_systems/linear_systems/src
+abs_srcdir = /home/bvuong/git/linear_systems/linear_systems/src
+abs_top_builddir = /home/bvuong/git/linear_systems/linear_systems
+abs_top_srcdir = /home/bvuong/git/linear_systems/linear_systems
 ac_ct_CXX = g++
 am__include = include
 am__leading_dot = .
@@ -223,7 +226,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/cabox/workspace/linear_systems/install-sh
+install_sh = ${SHELL} /home/bvuong/git/linear_systems/linear_systems/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -248,7 +251,7 @@ top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
 AM_CXXFLAGS = -std=c++11
-linear_systems_SOURCES = polynomial_solving.cpp
+__top_builddir__bin_linear_systems_SOURCES = linear_system.cpp matrix.cpp main.cpp
 all: all-am
 
 .SUFFIXES:
@@ -325,10 +328,13 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+$(top_builddir)/bin/$(am__dirstamp):
+	@$(MKDIR_P) $(top_builddir)/bin
+	@: > $(top_builddir)/bin/$(am__dirstamp)
 
-linear_systems$(EXEEXT): $(linear_systems_OBJECTS) $(linear_systems_DEPENDENCIES) $(EXTRA_linear_systems_DEPENDENCIES) 
-	@rm -f linear_systems$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(linear_systems_OBJECTS) $(linear_systems_LDADD) $(LIBS)
+$(top_builddir)/bin/linear_systems$(EXEEXT): $(__top_builddir__bin_linear_systems_OBJECTS) $(__top_builddir__bin_linear_systems_DEPENDENCIES) $(EXTRA___top_builddir__bin_linear_systems_DEPENDENCIES) $(top_builddir)/bin/$(am__dirstamp)
+	@rm -f $(top_builddir)/bin/linear_systems$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(__top_builddir__bin_linear_systems_OBJECTS) $(__top_builddir__bin_linear_systems_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -336,7 +342,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/polynomial_solving.Po
+include ./$(DEPDIR)/linear_system.Po
+include ./$(DEPDIR)/main.Po
+include ./$(DEPDIR)/matrix.Po
 
 .cpp.o:
 	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -467,6 +475,7 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
+	-test -z "$(top_builddir)/bin/$(am__dirstamp)" || rm -f $(top_builddir)/bin/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
