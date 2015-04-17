@@ -60,10 +60,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/polynomial_solving
-pkgincludedir = $(includedir)/polynomial_solving
-pkglibdir = $(libdir)/polynomial_solving
-pkglibexecdir = $(libexecdir)/polynomial_solving
+pkgdatadir = $(datadir)/linear_systems
+pkgincludedir = $(includedir)/linear_systems
+pkglibdir = $(libdir)/linear_systems
+pkglibexecdir = $(libexecdir)/linear_systems
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -79,7 +79,7 @@ POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
 host_triplet = x86_64-unknown-linux-gnu
 target_triplet = x86_64-unknown-linux-gnu
-bin_PROGRAMS = polynomial_solving$(EXEEXT)
+bin_PROGRAMS = linear_systems$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/depcomp
@@ -92,9 +92,9 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_polynomial_solving_OBJECTS = polynomial_solving.$(OBJEXT)
-polynomial_solving_OBJECTS = $(am_polynomial_solving_OBJECTS)
-polynomial_solving_LDADD = $(LDADD)
+am_linear_systems_OBJECTS = polynomial_solving.$(OBJEXT)
+linear_systems_OBJECTS = $(am_linear_systems_OBJECTS)
+linear_systems_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -124,8 +124,8 @@ AM_V_CXXLD = $(am__v_CXXLD_$(V))
 am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(polynomial_solving_SOURCES)
-DIST_SOURCES = $(polynomial_solving_SOURCES)
+SOURCES = $(linear_systems_SOURCES)
+DIST_SOURCES = $(linear_systems_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -151,19 +151,19 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/bvuong/workspace/otherthings/linear_systems/missing aclocal-1.14
+ACLOCAL = ${SHELL} /home/cabox/workspace/linear_systems/missing aclocal-1.14
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} /home/bvuong/workspace/otherthings/linear_systems/missing autoconf
-AUTOHEADER = ${SHELL} /home/bvuong/workspace/otherthings/linear_systems/missing autoheader
-AUTOMAKE = ${SHELL} /home/bvuong/workspace/otherthings/linear_systems/missing automake-1.14
+AUTOCONF = ${SHELL} /home/cabox/workspace/linear_systems/missing autoconf
+AUTOHEADER = ${SHELL} /home/cabox/workspace/linear_systems/missing autoheader
+AUTOMAKE = ${SHELL} /home/cabox/workspace/linear_systems/missing automake-1.14
 AWK = gawk
 CPPFLAGS = 
 CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"polynomial_solving\" -DPACKAGE_TARNAME=\"polynomial_solving\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"polynomial_solving\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"polynomial_solving\" -DVERSION=\"1.0\"
+DEFS = -DPACKAGE_NAME=\"linear_systems\" -DPACKAGE_TARNAME=\"linear_systems\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"linear_systems\ 1.0\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"linear_systems\" -DVERSION=\"1.0\"
 DEPDIR = .deps
 ECHO_C = 
 ECHO_N = -n
@@ -178,14 +178,14 @@ LDFLAGS =
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/bvuong/workspace/otherthings/linear_systems/missing makeinfo
+MAKEINFO = ${SHELL} /home/cabox/workspace/linear_systems/missing makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
-PACKAGE = polynomial_solving
+PACKAGE = linear_systems
 PACKAGE_BUGREPORT = 
-PACKAGE_NAME = polynomial_solving
-PACKAGE_STRING = polynomial_solving 1.0
-PACKAGE_TARNAME = polynomial_solving
+PACKAGE_NAME = linear_systems
+PACKAGE_STRING = linear_systems 1.0
+PACKAGE_TARNAME = linear_systems
 PACKAGE_URL = 
 PACKAGE_VERSION = 1.0
 PATH_SEPARATOR = :
@@ -193,10 +193,10 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = 
 VERSION = 1.0
-abs_builddir = /home/bvuong/workspace/otherthings/linear_systems/src
-abs_srcdir = /home/bvuong/workspace/otherthings/linear_systems/src
-abs_top_builddir = /home/bvuong/workspace/otherthings/linear_systems
-abs_top_srcdir = /home/bvuong/workspace/otherthings/linear_systems
+abs_builddir = /home/cabox/workspace/linear_systems/src
+abs_srcdir = /home/cabox/workspace/linear_systems/src
+abs_top_builddir = /home/cabox/workspace/linear_systems
+abs_top_srcdir = /home/cabox/workspace/linear_systems
 ac_ct_CXX = g++
 am__include = include
 am__leading_dot = .
@@ -223,7 +223,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/bvuong/workspace/otherthings/linear_systems/install-sh
+install_sh = ${SHELL} /home/cabox/workspace/linear_systems/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -248,7 +248,7 @@ top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
 AM_CXXFLAGS = -std=c++11
-polynomial_solving_SOURCES = polynomial_solving.cpp
+linear_systems_SOURCES = polynomial_solving.cpp
 all: all-am
 
 .SUFFIXES:
@@ -326,9 +326,9 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-polynomial_solving$(EXEEXT): $(polynomial_solving_OBJECTS) $(polynomial_solving_DEPENDENCIES) $(EXTRA_polynomial_solving_DEPENDENCIES) 
-	@rm -f polynomial_solving$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(polynomial_solving_OBJECTS) $(polynomial_solving_LDADD) $(LIBS)
+linear_systems$(EXEEXT): $(linear_systems_OBJECTS) $(linear_systems_DEPENDENCIES) $(EXTRA_linear_systems_DEPENDENCIES) 
+	@rm -f linear_systems$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(linear_systems_OBJECTS) $(linear_systems_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)

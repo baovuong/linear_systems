@@ -79,7 +79,7 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 target_triplet = @target@
-bin_PROGRAMS = polynomial_solving$(EXEEXT)
+bin_PROGRAMS = linear_systems$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/depcomp
@@ -92,9 +92,9 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_polynomial_solving_OBJECTS = polynomial_solving.$(OBJEXT)
-polynomial_solving_OBJECTS = $(am_polynomial_solving_OBJECTS)
-polynomial_solving_LDADD = $(LDADD)
+am_linear_systems_OBJECTS = polynomial_solving.$(OBJEXT)
+linear_systems_OBJECTS = $(am_linear_systems_OBJECTS)
+linear_systems_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -124,8 +124,8 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(polynomial_solving_SOURCES)
-DIST_SOURCES = $(polynomial_solving_SOURCES)
+SOURCES = $(linear_systems_SOURCES)
+DIST_SOURCES = $(linear_systems_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -248,7 +248,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CXXFLAGS = -std=c++11
-polynomial_solving_SOURCES = polynomial_solving.cpp
+linear_systems_SOURCES = polynomial_solving.cpp
 all: all-am
 
 .SUFFIXES:
@@ -326,9 +326,9 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-polynomial_solving$(EXEEXT): $(polynomial_solving_OBJECTS) $(polynomial_solving_DEPENDENCIES) $(EXTRA_polynomial_solving_DEPENDENCIES) 
-	@rm -f polynomial_solving$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(polynomial_solving_OBJECTS) $(polynomial_solving_LDADD) $(LIBS)
+linear_systems$(EXEEXT): $(linear_systems_OBJECTS) $(linear_systems_DEPENDENCIES) $(EXTRA_linear_systems_DEPENDENCIES) 
+	@rm -f linear_systems$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(linear_systems_OBJECTS) $(linear_systems_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
